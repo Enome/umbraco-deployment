@@ -1,1 +1,38 @@
-﻿
+﻿<%@ Master Language="C#" MasterPageFile="~/umbraco/masterpages/default.master" AutoEventWireup="true" %>
+<%@ Import Namespace="SquishIt.Framework" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolderDefault" runat="server">
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title></title>
+
+            <meta name="description" content='<umbraco:Item field="omschrijving" runat="server"></umbraco:Item>'/>
+            <%= Bundle.Css()
+                      .Add("~/css/main.less.css")
+                      .ForceDebug()
+                      .Render("~/css/combined_#.css") %>
+            
+            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+            <%= Bundle.JavaScript()
+                      .Add("~/scripts/main.js")
+                      .ForceDebug()
+                      .Render("~/scripts/combined_#.js")%>
+
+            <asp:ContentPlaceHolder ID="cphHead" runat="server" />
+        </head>
+        <body>
+            <div id='Page'>
+                <div id='Banner'></div>
+
+                <div id='Content'>
+                    <asp:ContentPlaceHolder runat='server' id='cphContent' />
+                </div>
+
+                <div id='Footer'>
+                    Made by your company!
+                </div>
+            </div>
+        </body>
+    </html>
+</asp:Content>

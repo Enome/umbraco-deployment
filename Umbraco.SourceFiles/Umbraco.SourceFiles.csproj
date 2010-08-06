@@ -32,6 +32,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="dotless.Core">
+      <HintPath>..\..\enome\src\sharedlibs\dotless.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EcmaScript.NET.modified">
+      <HintPath>..\..\enome\src\sharedlibs\EcmaScript.NET.modified.dll</HintPath>
+    </Reference>
+    <Reference Include="SquishIt.Framework">
+      <HintPath>..\..\enome\src\sharedlibs\SquishIt.Framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
@@ -45,6 +54,9 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Web.Mobile" />
+    <Reference Include="Yahoo.Yui.Compressor">
+      <HintPath>..\..\enome\src\sharedlibs\Yahoo.Yui.Compressor.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\BackEnd.cs" />
@@ -54,7 +66,7 @@
     <Content Include="masterpages\Master.master" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="css\main.css" />
+    <Content Include="css\main.less.css" />
     <Content Include="python\helpers\__init__.py" />
     <Content Include="scripts\main.js" />
   </ItemGroup>
@@ -89,7 +101,7 @@
   </ProjectExtensions>
   <PropertyGroup>
     <PostBuildEvent>CD $(SolutionDir)/Umbraco.SourceFiles
-CALL robocopyThis.bat</PostBuildEvent>
+CALL robocopythis.bat</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
