@@ -29,8 +29,8 @@ ROBOCOPY %sourcedir%python %targetdir%python /MIR /XO /E
 ROBOCOPY %targetdir%python %sourcedir%python /XO /E
 
 ::SCRIPTS (include subfolders)
-ROBOCOPY %targetdir%scripts %sourcedir%scripts /MIR /XO /E
-ROBOCOPY %sourcedir%scripts %targetdir%scripts /XO /E
+ROBOCOPY %sourcedir%scripts %targetdir%scripts /MIR /XO /E
+ROBOCOPY %targetdir%scripts %sourcedir%scripts /XO /E
 
 ::MASTERPAGES
 ROBOCOPY %sourcedir%masterpages %targetdir%masterpages *.master /MIR /XO
