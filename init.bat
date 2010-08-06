@@ -1,4 +1,6 @@
 mkdir Umbraco.Framework
-mkdir Umbraco.SourceFiles/images
-mkdir Umbraco.SourceFiles/usercontrols
-mkdir Umbraco.SourceFiles/xslt
+cd Umbraco.SourceFiles
+mkdir images
+mkdir usercontrols
+mkdir xslt
+
