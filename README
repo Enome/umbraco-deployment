@@ -1,0 +1,12 @@
+Made by Enome Webdesign:
+########################
+
+Asp.net WebApp with a deployment batch and a file structure that can be source controlled. 
+
+********WARNING********
+#######################
+The batch file uses /MIR which will try and mirror this webapp with your Umbraco instance. This means it will DELETE files that don't exists in the source directory. 
+
+USAGE:
+########################
+Open the RobocopyThis.bat and adjust the target and source directory. The idea is that you develop all your source files in this webapp. The solution has a post build event that will to mirror the source files to your Umbraco instances. The bin folder gets copied instead of mirrored. 
