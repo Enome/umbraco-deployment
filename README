@@ -9,4 +9,9 @@ The batch file uses /MIR which will try and mirror this webapp with your Umbraco
 
 USAGE:
 ########################
-Open the RobocopyThis.bat and adjust the target and source directory. The idea is that you develop all your source files in this webapp. The solution has a post build event that will to mirror the source files to your Umbraco instances. The bin folder gets copied instead of mirrored. 
+-Run the init.bat
+-This will create the Umbraco.Framework folder.
+-Copy your Umbraco files into the Umbraco.Framework folder.
+-It will also create a few empty folders in Umbraco.SourceFiles because GIT doesn't source control empty folders.
+-The RobocopyThis.bat file gets called in the post build event.
+-You can adjust it(it's not hard) to whatever you like.
