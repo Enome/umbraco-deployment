@@ -5,7 +5,16 @@ Asp.net WebApp with a deployment batch and a file structure that can be source c
 
 ********WARNING********
 #######################
-The batch file uses /MIR which will try and mirror this webapp with your Umbraco instance. This means it will DELETE files that don't exists in the source directory. 
+The bin folder does a normal copy and shouldn't be a problem. The warning is for all the other folders. If you build, the batch file will mirror all the directories(except bin). This means that if the target folder has a file that doesn't exist in the source folder it will get REMOVED. It will also overwrite older files. That means that the same files or newer files won't get touched.
+
+RobocopyThis will also pull from the Umbraco.Framework folder after it mirror'd. I added this because sometimes you want to adjust a file inside the Umbraco back-end. It only works for files that are also in the source dictory. So if you create a file in the back-end mirror will DELETE it before it can get pulled.
+
+Example:
+ROBOCOPY %sourcedir%css %targetdir%css /MIR /XO /E
+First we mirror(/MIR) the source directory with the umbraco css directory/subdirectories(/E). This will overwrite older files(/XO) but don't touch the same or newer files. So if you adjusted a file in the back-end that's also in the source it wont be overwritten.
+
+ROBOCOPY %targetdir%css %sourcedir%css /XO /E
+This will copy from the umbraco css directory to the source directory but will only overwrite older files. The same as above but it wont delete files that don't exists in the target directory.
 
 USAGE:
 ########################
