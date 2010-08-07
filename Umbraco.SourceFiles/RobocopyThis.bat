@@ -42,4 +42,9 @@ ROBOCOPY %targetdir%usercontrols %sourcedir%usercontrols *.ascx /XO
 
 ::XSLT
 ROBOCOPY %sourcedir%xslt %targetdir%xslt /MIR /XO
-ROBOCOPY %targetdir%xslt %sourcedir%xslt /MIR /XO
+ROBOCOPY %targetdir%xslt %sourcedir%xslt /XO
+
+::Media
+ROBOCOPY %targetdir%xslt %sourcedir%xslt /XO /MIR
+
+

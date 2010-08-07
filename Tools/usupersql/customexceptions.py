@@ -1,0 +1,1 @@
+class ArgsException(Exception): pass

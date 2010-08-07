@@ -1,0 +1,1 @@
+c:/python27/python.exe ../tools/usupersql/usqlfetcher.py ../Umbraco.Framework/web.config _db/db.sql ../tools/mysqldump.exe
