@@ -3,6 +3,17 @@ Made by Enome Webdesign:
 
 Asp.net WebApp with a deployment batch and a file structure that can be source controlled. 
 
+Version 0.2
+#######################
+-Added media pushing on init and media pulling on post build event.
+-The _db and _media folder shouldn't be touched by human hands. 
+-Added SuperFetcher which will superfetch your database dump files(MySql only). SuperFetcher requires python27 to be installed. c:/python27.python.exe. To use it just click the uSuperfetch.bat in Umbraco.SourceFiles
+
+Future Features: 
+#######################
+-SuperPusher to restore the database on init.bat.
+-Compile the py scripts into *.exe so you don't need python installed
+
 ********WARNING********
 #######################
 The bin folder does a normal copy and shouldn't be a problem. The warning is for all the other folders. If you build, the batch file will mirror all the directories(except bin). This means that if the target folder has a file that doesn't exist in the source folder it will get REMOVED. It will also overwrite older files. That means that the same files or newer files won't get touched.
